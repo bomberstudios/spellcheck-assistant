@@ -1,21 +1,29 @@
 import { AssistantPackage, RuleDefinition } from '@sketch-hq/sketch-assistant-types'
+import SpellChecker from 'spellchecker'
 
-const helloWorld: RuleDefinition = {
+const spellchecker: RuleDefinition = {
   rule: async (context) => {
-    context.utils.report('Hello world')
+    const { utils } = context
+    for (const textLayer of utils.objects.text) {
+      const text = textLayer.attributedString.string
+      const errors = SpellChecker.checkSpelling(text)
+      if (errors.length > 0) {
+        utils.report(`Text layer "${textLayer.name}" has ${errors.length} spelling errors.`)
+      }
+    }
   },
-  name: 'sketch-assistant-template/hello-world',
-  title: 'Hello World',
-  description: 'Reports a hello world message',
+  name: 'spellcheck-assistant/spellchecker',
+  title: 'Spellchecker',
+  description: 'Checks the spelling on this document',
 }
 
 const assistant: AssistantPackage = async () => {
   return {
-    name: 'sketch-assistant-template',
-    rules: [helloWorld],
+    name: 'spellcheck-assistant',
+    rules: [spellchecker],
     config: {
       rules: {
-        'sketch-assistant-template/hello-world': { active: true },
+        'spellcheck-assistant/spellchecker': { active: true },
       },
     },
   }
