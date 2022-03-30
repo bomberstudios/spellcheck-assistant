@@ -1,16 +1,5 @@
-# sketch-assistant-template
+# Spellcheck Assistant
 
-> 💁‍♀️ This repository contains a starter project for developing a new Assistant.
+This is a proof of concept Assistant for spellchecking in Sketch.
 
-👉
-[Click here to generate a new project using this repository as a template](https://github.com/sketch-hq/sketch-assistant-template/generate)
-
-## Getting started
-
-For in-depth guides head over to the [Sketch Developer](https://developer.sketch.com/assistants/)
-site.
-
-- [Getting started](https://developer.sketch.com/assistants/getting-started)
-- [Write a rule](https://developer.sketch.com/assistants/write-a-rule)
-- [Publishing](https://developer.sketch.com/assistants/publish)
-- And more!
+At the moment, it only works when running the Assistant in a node environment.
