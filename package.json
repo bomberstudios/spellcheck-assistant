@@ -42,7 +42,7 @@
     "@types/node": "17.0.23",
     "@types/spellchecker": "^3.5.0",
     "jest": "27.5.1",
-    "node-fetch": "3.2.3",
+    "node-fetch": "3.2.10",
     "node-loader": "^2.0.0",
     "prettier": "2.6.1",
     "spellchecker": "3.7.1",
